@@ -5,18 +5,18 @@ function Footer() {
     <footer
       className="footer-0"
       role="contentinfo"
+      aria-label="Site footer with company information and quick links"
       style={{ position: "relative" }}
     >
       <div className="container">
         <div className="footer-about">
           <div className="row">
-
             {/* COMPANY INFO */}
             <div className="col-md-4">
-              <section className="hero--f">
-                <div className="hero-img">
-                  <h2>BrightWays</h2>
-                </div>
+              <section aria-labelledby="company-info-heading">
+                <h2 id="company-info-heading" className="hero--f" style={{ fontSize: "24px", marginBottom: "15px" }}>
+                  BrightWays
+                </h2>
                 <p>
                   Brightways financial research house carrying out operations
                   in the intraday as well as delivery calls in Indian Equities
@@ -28,24 +28,8 @@ function Footer() {
             {/* NAVIGATION */}
             <div className="col-md-4">
               <nav aria-label="Footer Navigation">
-
-                {/* visually hidden heading */}
-                <h2
-                  style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "1px",
-                    padding: "0",
-                    margin: "-1px",
-                    overflow: "hidden",
-                    clip: "rect(0,0,0,0)",
-                    border: "0"
-                  }}
-                >
-                  Quick Links
-                </h2>
-
-                <ul className="jghf">
+                <h2 style={{ fontSize: "18px", marginBottom: "15px" }}>Quick Links</h2>
+                <ul className="jghf" style={{ listStyle: "none", paddingLeft: 0 }}>
                   <li>
                     <a href="/">
                       <span aria-hidden="true">➤</span> Home
@@ -56,11 +40,6 @@ function Footer() {
                       <span aria-hidden="true">➤</span> Service
                     </a>
                   </li>
-                  <li>
-  <a href="/accessibility-statement">
-    <span aria-hidden="true">➤</span> Accessibility Statement
-  </a>
-</li>
                   <li>
                     <a href="/about">
                       <span aria-hidden="true">➤</span> About us
@@ -76,38 +55,43 @@ function Footer() {
                       <span aria-hidden="true">➤</span> Refund Policy
                     </a>
                   </li>
+                  <li>
+                    <a href="/accessibility-statement">
+                      <span aria-hidden="true">➤</span> Accessibility Statement
+                    </a>
+                  </li>
                 </ul>
               </nav>
             </div>
 
             {/* CTA */}
             <div className="col-md-4">
-              <section>
-
-                {/* visually hidden heading */}
-                <h2
-                  style={{
-                    position: "absolute",
-                    width: "1px",
-                    height: "1px",
-                    padding: "0",
-                    margin: "-1px",
-                    overflow: "hidden",
-                    clip: "rect(0,0,0,0)",
-                    border: "0"
-                  }}
-                >
-                  Call to Action
-                </h2>
-
-                <ul>
-                  <li className="jghf kk">
+              <section aria-label="Call to action">
+                <h2 style={{ fontSize: "18px", marginBottom: "15px" }}>Get Started</h2>
+                <ul style={{ listStyle: "none", paddingLeft: 0 }}>
+                  <li className="jghf kk" style={{ fontSize: "24px", fontWeight: "600" }}>
                     GET EXPERT ADVICE
+                  </li>
+                  <li style={{ marginTop: "15px" }}>
+                    <a href="/contact" className="btn btn-light" style={{ color: "#00923f", fontWeight: "600", padding: "10px 20px", textDecoration: "none" }}>
+                      Contact Us Today
+                    </a>
                   </li>
                 </ul>
               </section>
             </div>
-
+          </div>
+        </div>
+        <div className="row border-top pt-3 mt-3">
+          <div className="col-12 text-center">
+            <p style={{ fontSize: "12px", marginBottom: "10px" }}>
+              © {new Date().getFullYear()} Brightways Financial Services. SEBI Reg No: INH000010566
+            </p>
+            <p style={{ fontSize: "11px" }}>
+              <a href="/disclosure-disclaimer" style={{ color: "white", textDecoration: "underline" }}>Disclosure & Disclaimer</a> | 
+              <a href="/policy" style={{ color: "white", textDecoration: "underline", marginLeft: "10px" }}> Refund Policy</a> |
+              <a href="/accessibility-statement" style={{ color: "white", textDecoration: "underline", marginLeft: "10px" }}> Accessibility Statement</a>
+            </p>
           </div>
         </div>
       </div>

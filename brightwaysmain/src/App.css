@@ -572,3 +572,113 @@ input[type="text"] {
 .skip-link:focus {
   top: 10px;
 }
+
+
+/* ============================================
+   Accessibility Styles
+   ============================================ */
+
+/* Focus indicators - WCAG 2.4.7 Focus Visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #0052cc !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.2) !important;
+}
+
+/* Skip link - WCAG 2.4.1 Bypass Blocks */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 10px;
+  outline: 3px solid #ffd700;
+}
+
+/* Reduced motion support - WCAG 2.2.2 Pause, Stop, Hide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast focus styles */
+@media (forced-colors: active) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 3px solid Highlight !important;
+  }
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Error message styling */
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+input:invalid {
+  border-color: #dc3545;
+}
+
+/* Ensure sufficient color contrast - WCAG 1.4.3 */
+.text-muted {
+  color: #6c757d !important; /* 4.5:1 on white background */
+}
+
+/* Make tables scrollable on mobile - WCAG 1.4.10 Reflow */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure buttons have sufficient contrast */
+.btn-primary {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+/* Focus ring for custom elements */
+.custom-dropdown-toggle:focus-visible {
+  outline: 3px solid #0052cc;
+  outline-offset: 2px;
+}
+

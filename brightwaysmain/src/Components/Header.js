@@ -1,10 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./header.css";
 
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  // Detect system Reduce Motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mediaQuery.matches);
+    
+    const handleMotionChange = (e) => setReduceMotion(e.matches);
+    mediaQuery.addEventListener("change", handleMotionChange);
+    
+    return () => mediaQuery.removeEventListener("change", handleMotionChange);
+  }, []);
 
   const toggleMenu = () => {
     setIsNavExpanded(!isNavExpanded);
@@ -13,17 +25,32 @@ function Header() {
   return (
     <>
       <div className="header-0">
-        <nav
-          className="navigation"
-          role="navigation"
-          aria-label="Main Navigation"
-        >
+        {/* SKIP LINK */}
+        <a href="#main-content" className="skip-link" style={{
+          position: "absolute",
+          top: "-40px",
+          left: "10px",
+          background: "#000",
+          color: "#fff",
+          padding: "8px",
+          zIndex: "1000",
+          textDecoration: "none"
+        }} onFocus={(e) => {
+          e.target.style.top = "10px";
+        }} onBlur={(e) => {
+          e.target.style.top = "-40px";
+        }}>
+          Skip to main content
+        </a>
+
+        {/* HEADER LANDMARK */}
+        <header className="navigation" role="banner" aria-label="Main header">
           {/* Logo */}
-          <a href="/" className="brand-name">
+          <a href="/" className="brand-name" aria-label="Brightways Financial - Home">
             <img
-              src="/logo2.jpg" 
+              src="/logo2.jpg"
               className="roy"
-              alt="Brightways"
+              alt="Brightways Financial Services logo"
               style={{ width: "160px" }}
             />
           </a>
@@ -32,17 +59,20 @@ function Header() {
           <button
             className="hamburger"
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-expanded={isNavExpanded}
+            aria-label={isNavExpanded ? "Close menu" : "Open menu"}
+            style={{ background: "#357997", color: "white", border: "none", fontSize: "24px", padding: "5px 10px", cursor: "pointer" }}
           >
-            ☰
+            {isNavExpanded ? "✕" : "☰"}
           </button>
 
-          <div
-            className={
-              isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-            }
+          {/* NAVIGATION LANDMARK */}
+          <nav
+            className={isNavExpanded ? "navigation-menu expanded" : "navigation-menu"}
+            aria-label="Main navigation"
+            aria-hidden={!isNavExpanded}
           >
-            <ul>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               <li>
                 <a href="/">Home</a>
               </li>
@@ -52,11 +82,14 @@ function Header() {
                   <Dropdown.Toggle
                     bsPrefix="custom-dropdown-toggle"
                     id="dropdown-basic"
+                    aria-label="Services menu"
                   >
                     Service ▼
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item href="/service">All Services</Dropdown.Item>
+                    <Dropdown.Item href="/service" aria-label="View all services">
+                      All Services
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </li>
@@ -76,29 +109,33 @@ function Header() {
               <li>
                 <a href="/disclosure-disclaimer">Disclosure & Disclaimer</a>
               </li>
-              <li>
-                < a href="/accessibility-statement">Accessibility Statement</a>
-              </li>
+
               <li>
                 <a href="/contact">Contact us</a>
               </li>
-                  
-              {/* Payment Button (Yellow) */}
+
               <li>
-                <a href="/payment" className="btn-payment">
+                <a href="/accessibility-statement" aria-label="Accessibility statement">
+                  Accessibility
+                </a>
+              </li>
+
+              {/* Payment Button */}
+              <li>
+                <a href="/payment" className="btn-payment" aria-label="Make a payment">
                   Payment
                 </a>
               </li>
 
-              {/* KYC Button (Green) */}
+              {/* KYC Button */}
               <li>
-                <a href="/kyc" className="btn-kyc">
+                <a href="/kyc" className="btn-kyc" aria-label="Complete KYC form">
                   KYC
                 </a>
               </li>
             </ul>
-          </div>
-        </nav>
+          </nav>
+        </header>
       </div>
     </>
   );

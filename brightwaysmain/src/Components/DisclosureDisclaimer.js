@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import './DisclosureDisclaimer.css';
 
-// ✅ Accessible Accordion Item
+// ✅ Accessible Accordion Item with keyboard support
 const AccordionItem = ({ title, content, id }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -10,12 +9,20 @@ const AccordionItem = ({ title, content, id }) => {
     setIsActive(!isActive);
   };
 
+  // ✅ Keyboard support for Enter and Space keys
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleAccordion();
+    }
+  };
+
   return (
     <div className="accordion-item">
-      {/* ✅ button for keyboard accessibility */}
       <button
         className="accordion-header"
         onClick={toggleAccordion}
+        onKeyDown={handleKeyDown}
         aria-expanded={isActive}
         aria-controls={`section-${id}`}
         id={`accordion-${id}`}
@@ -23,7 +30,6 @@ const AccordionItem = ({ title, content, id }) => {
         {title}
       </button>
 
-      {/* ✅ Accessible content region */}
       <div
         id={`section-${id}`}
         role="region"
@@ -40,15 +46,33 @@ const AccordionItem = ({ title, content, id }) => {
 export default function DisclosureDisclaimer() {
   return (
     <>
-      {/* ✅ Skip Link */}
-      <a href="#main-content" className="visually-hidden-focusable">
+      {/* ✅ Skip link for keyboard navigation */}
+      <a 
+        href="#main-content" 
+        className="visually-hidden-focusable"
+        style={{
+          position: 'absolute',
+          top: '-40px',
+          left: '10px',
+          background: '#141212',
+          color: '#fff',
+          padding: '8px',
+          zIndex: '1000',
+          textDecoration: 'none'
+        }}
+        onFocus={(e) => { e.target.style.top = '10px'; }}
+        onBlur={(e) => { e.target.style.top = '-40px'; }}
+      >
         Skip to main content
       </a>
 
-      {/* ✅ Main Landmark */}
-      <main className="disclaimer-container" id="main-content">
+      {/* ✅ Main content with proper heading hierarchy */}
+      <main className="disclaimer-container" id="main-content" tabIndex="-1">
+        
+        {/* ✅ H1 - Page title (only one H1 per page) */}
         <h1 className="disclaimer-title">Disclaimer and Disclosures</h1>
 
+        {/* ✅ SECTION 1 - H2 heading for major section */}
         <div className="card">
           <h2 className="card-title">Market Risks and Warnings</h2>
           <div className="card-content">
@@ -63,6 +87,7 @@ export default function DisclosureDisclaimer() {
           </div>
         </div>
 
+        {/* ✅ SECTION 2 - H2 heading for major section */}
         <div className="card">
           <h2 className="card-title">SEBI Specified Mechanism</h2>
           <div className="card-content">
@@ -76,6 +101,7 @@ export default function DisclosureDisclaimer() {
           </div>
         </div>
 
+        {/* ✅ SECTION 3 - H2 heading for major section */}
         <div className="card">
           <h2 className="card-title">Important Notices</h2>
           <div className="card-content">
@@ -159,8 +185,13 @@ export default function DisclosureDisclaimer() {
           </div>
         </div>
 
-        {/* ✅ Accessible Accordion */}
+        {/* ✅ SECTION 4 - H2 heading for accordion section */}
+        <h2 className="visually-hidden" style={{ position: 'absolute', width: '1px', height: '1px', padding: '0', margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', border: '0' }}>
+          Additional Disclosures
+        </h2>
+        
         <div className="accordion">
+          {/* ✅ H3 headings inside accordion buttons (but buttons are not headings, so we keep as is) */}
           <AccordionItem
             id="1"
             title="Business Activity"

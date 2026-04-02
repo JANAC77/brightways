@@ -26,11 +26,6 @@ const services = [
 function Service() {
   return (
     <>
-      {/* ✅ Skip Link (VERY IMPORTANT for accessibility) */}
-      <a href="#main-content" className="visually-hidden-focusable">
-        Skip to main content
-      </a>
-
       {/* Header */}
       <header className="bg-primary text-white text-center py-4">
         <h1>Our Services</h1>
@@ -38,14 +33,13 @@ function Service() {
       </header>
 
       {/* Main Content */}
-      <main id="main-content">
+      <main id="main-content" tabIndex="-1">
         <Container className="mt-5">
-
-          {/* Who We Are */}
-          <section aria-labelledby="who-we-are">
+          {/* Who We Are Section */}
+          <section aria-labelledby="who-we-are-heading">
             <Row className="mb-4">
               <Col>
-                <h2 id="who-we-are" className="text-center">
+                <h2 id="who-we-are-heading" className="text-center">
                   Who We Are?
                 </h2>
                 <p>
@@ -53,13 +47,12 @@ function Service() {
                 </p>
                 <p>
                   Brightways is a SEBI-registered Research Analyst firm (SEBI Reg No: INH000010566) based in Bangalore. Our goal is to provide quality advice on intraday and positional trading, ensuring maximum returns for our clients.
-
                 </p>
               </Col>
             </Row>
           </section>
 
-          {/* Services Title */}
+          {/* Services Section */}
           <section aria-labelledby="services-heading">
             <h2 id="services-heading" className="text-center my-4">
               Empower Your Business with Our Services
@@ -68,12 +61,8 @@ function Service() {
             <Row className="mt-3">
               {services.map((service, index) => (
                 <Col md={4} sm={6} xs={12} key={index} className="mb-4">
-
-                  {/* ✅ Article for each card */}
                   <article>
                     <Card className="shadow text-center h-100">
-
-                      {/* Image */}
                       <div
                         className="bg-light"
                         style={{
@@ -85,35 +74,27 @@ function Service() {
                       >
                         <img
                           src={service.image}
-                          alt={`${service.name} service`}
+                          alt={`${service.name} service icon`}
                           style={{ maxHeight: "100%", maxWidth: "100%" }}
                         />
                       </div>
-
                       <Card.Body>
-                        {/* ✅ Proper heading hierarchy */}
                         <h3 className="h5">{service.name}</h3>
-
                         <p>{service.description}</p>
-
-                        {/* ✅ Accessible button name */}
                         <Button
                           variant="primary"
                           href={service.link}
-                          aria-label={`Know more about ${service.name}`}
+                          aria-label={`Learn more about ${service.name}`}
                         >
                           Know More
                         </Button>
                       </Card.Body>
-
                     </Card>
                   </article>
-
                 </Col>
               ))}
             </Row>
           </section>
-
         </Container>
       </main>
     </>

@@ -20,280 +20,265 @@ import MomentumTrade from "./Components/MomentumTrade";
 import ProCommodity from "./Components/ProCommodity";
 import StockCashPro from "./Components/StockCashPro";
 import HNIStockFuturePro from "./Components/HNIStockfuturepro";
-import AccessibilityStatement from "./Components/AccessibilityStatement";
-
-/* ⭐ Added Import */
 import PaymentPage from "./Components/Payment";
+import AccessibilityStatement from "./Components/AccessibilityStatement";
 
 function App() {
   return (
-    <>
-      <div style={{ overflow: "clip" }}>
-        <BrowserRouter>
+    // Language attribute is set in index.html, but ensure it's there
+    <div style={{ overflow: "clip" }}>
+      <BrowserRouter>
+        {/* Skip link is now in Header component */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <Home />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-          {/* ✅ SKIP LINK ADDED */}
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <About />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-          <Routes>
+          <Route
+            path="/service"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <Service />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <Home />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/investor"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <Investor />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/about"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <About />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/complaint"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <Complaint2 />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/service"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <Service />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/basic-stock-cash"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <BasicStockCash />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/investor"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <Investor />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/basic-index-option"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <BasicIndexOption />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/complaint"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <Complaint2 />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/hni-index-option"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <HniIndexOption />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            {/* Service Dropdown */}
+          <Route
+            path="/hni-stock-option"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <HniStockOption />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/basic-stock-cash"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <BasicStockCash />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/momentum-trade"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <MomentumTrade />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/basic-index-option"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <BasicIndexOption />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/hni-stock-future-pro"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <HNIStockFuturePro />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/hni-index-option"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <HniIndexOption />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/pro-commodity"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <ProCommodity />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/hni-stock-option"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <HniStockOption />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/stock-cash-pro"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <StockCashPro />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/momentum-trade"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <MomentumTrade />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <Contact />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/hni-stock-future-pro"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <HNIStockFuturePro />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/policy"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <Policy />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/pro-commodity"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <ProCommodity />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/disclosure-disclaimer"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <DisclosureDisclaimer />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/stock-cash-pro"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <StockCashPro />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/kyc"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <Kyc />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/contact"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <Contact />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
+          <Route
+            path="/payment"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <PaymentPage />
+                </main>
+                <Footer />
+              </>
+            }
+          />
 
-            <Route
-              path="/policy"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <Policy />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
-
-            <Route
-              path="/disclosure-disclaimer"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <DisclosureDisclaimer />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
-
-            <Route
-              path="/kyc"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <Kyc />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
-
-            {/* ⭐⭐⭐ Payment Route Added */}
-            <Route
-              path="/payment"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <PaymentPage />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
-
-            
-            {/* New Accessibility Statement Route */}
-            <Route
-              path="/accessibility-statement"
-              element={
-                <>
-                  <Header />
-                  <div id="main-content">
-                    <AccessibilityStatement />
-                  </div>
-                  <Footer />
-                </>
-              }
-            />
-
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </>
+          <Route
+            path="/accessibility-statement"
+            element={
+              <>
+                <Header />
+                <main id="main-content" tabIndex="-1">
+                  <AccessibilityStatement />
+                </main>
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
