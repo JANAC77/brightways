@@ -26,11 +26,6 @@ const services = [
 function Service() {
   return (
     <>
-      {/* Header */}
-      <header className="bg-primary text-white text-center py-4">
-        <h1>Our Services</h1>
-        <p>Explore our premium financial research services</p>
-      </header>
 
       {/* Main Content */}
       <main id="main-content" tabIndex="-1">

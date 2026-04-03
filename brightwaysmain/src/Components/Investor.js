@@ -38,15 +38,6 @@ export default function Investor() {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-
-      <header>
-        <img
-          src="../investor.jpg"
-          alt="Investor related financial services banner"
-          className="banner-img"
-        />
-      </header>
-
       <main id="main-content">
         <h1 className="disclaimer-title">
           Investor Charter in respect of Research Analyst (RA)

@@ -23,6 +23,16 @@ import HNIStockFuturePro from "./Components/HNIStockfuturepro";
 import PaymentPage from "./Components/Payment";
 import AccessibilityStatement from "./Components/AccessibilityStatement";
 
+const bannerImages = {
+   "/service": "/Image/image7.jpg",
+  "/investor": "/Image/image8.jpg",
+  "/complaint": "/Image/image9.jpg",
+  "/about": "/Image/image10.jpg",
+  "/disclosure-disclaimer": "/Image/image11.jpg",
+  "/contact": "/Image/image12.jpg",
+  "/accessibility-statement": "/Image/image13.jpg",
+};
+
 function App() {
   return (
     // Language attribute is set in index.html, but ensure it's there
@@ -34,7 +44,7 @@ function App() {
             path="/"
             element={
               <>
-                <Header />
+                 <Header />
                 <main id="main-content" tabIndex="-1">
                   <Home />
                 </main>
@@ -47,7 +57,7 @@ function App() {
             path="/about"
             element={
               <>
-                <Header />
+                <Header bannerImage={bannerImages["/about"]} bannerHeading="About Us" />
                 <main id="main-content" tabIndex="-1">
                   <About />
                 </main>
@@ -60,7 +70,8 @@ function App() {
             path="/service"
             element={
               <>
-                <Header />
+                <Header bannerImage={bannerImages["/service"]} bannerHeading="Services" />
+
                 <main id="main-content" tabIndex="-1">
                   <Service />
                 </main>
@@ -73,7 +84,7 @@ function App() {
             path="/investor"
             element={
               <>
-                <Header />
+                <Header bannerImage={bannerImages["/investor"]} bannerHeading="Investor Charter" />
                 <main id="main-content" tabIndex="-1">
                   <Investor />
                 </main>
@@ -86,7 +97,7 @@ function App() {
             path="/complaint"
             element={
               <>
-                <Header />
+                <Header bannerImage={bannerImages["/complaint"]} bannerHeading="Complaint Table" />
                 <main id="main-content" tabIndex="-1">
                   <Complaint2 />
                 </main>
@@ -203,7 +214,7 @@ function App() {
             path="/contact"
             element={
               <>
-                <Header />
+                <Header bannerImage={bannerImages["/contact"]} bannerHeading="Contact Us" />
                 <main id="main-content" tabIndex="-1">
                   <Contact />
                 </main>
@@ -229,7 +240,7 @@ function App() {
             path="/disclosure-disclaimer"
             element={
               <>
-                <Header />
+                <Header bannerImage={bannerImages["/disclosure-disclaimer"]} bannerHeading="Disclosure & Disclaimer" />
                 <main id="main-content" tabIndex="-1">
                   <DisclosureDisclaimer />
                 </main>
@@ -268,7 +279,7 @@ function App() {
             path="/accessibility-statement"
             element={
               <>
-                <Header />
+                <Header bannerImage={bannerImages["/accessibility-statement"]} bannerHeading="Accessibility" />
                 <main id="main-content" tabIndex="-1">
                   <AccessibilityStatement />
                 </main>

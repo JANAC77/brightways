@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./header.css";
 
-function Header() {
+function Header({ bannerImage, bannerHeading }) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
@@ -42,6 +42,67 @@ function Header() {
         }}>
           Skip to main content
         </a>
+
+        {/* CONDITIONAL BANNER IMAGE - only show if bannerImage is provided */}
+        {bannerImage && (
+          <div 
+            className="page-banner" 
+            aria-hidden="true" 
+            style={{ 
+              width: "100%", 
+              overflow: "hidden", 
+              position: "relative",
+              backgroundColor: "#f5f5f5"
+            }}
+          >
+            <div style={{
+              position: "relative",
+              width: "100%",
+              height: "220px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}>
+              <img
+                src={bannerImage}
+                alt="Brightways Financial banner"
+                style={{ 
+                  width: "100%", 
+                  height: "100%", 
+                  objectFit: "cover", 
+                  display: "block" 
+                }}
+              />
+              {/* Dark overlay for text readability */}
+              <div style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0, 0, 0, 0.3)"
+              }} />
+            </div>
+            {bannerHeading && (
+              <h1 style={{
+                position: "absolute",
+                bottom: "30px",
+                left: "50%",
+                transform: "translateX(-50%)",
+                color: "#ffffff",
+                fontSize: "36px",
+                fontWeight: "700",
+                textShadow: "3px 3px 6px rgba(0,0,0,0.7)",
+                margin: "0",
+                textAlign: "center",
+                maxWidth: "90%",
+                letterSpacing: "0.5px"
+              }}>
+                {bannerHeading}
+              </h1>
+            )}
+          </div>
+        )}
 
         {/* HEADER LANDMARK */}
         <header className="navigation" role="banner" aria-label="Main header">
@@ -83,6 +144,7 @@ function Header() {
                     bsPrefix="custom-dropdown-toggle"
                     id="dropdown-basic"
                     aria-label="Services menu"
+                    style={{ fontWeight: "bold" }}
                   >
                     Service ▼
                   </Dropdown.Toggle>

@@ -6,25 +6,7 @@ function About() {
 
   return (
     <>
-      <header
-        className="about-pages mt-4"
-        style={{
-          backgroundImage: `linear-gradient(rgb(2 5 18 / 52%),rgb(12 12 12 / 54%)),
-          url('/1.avif')`,
-          height: "300px",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        role="banner"
-        aria-label="About our company banner"
-      >
-        <div className="container">
-          <div className="pagetitle">
-            <h1>About Our Company</h1>
-          </div>
-        </div>
-      </header>
+      
 
       <main>
         <section className="gkw">
