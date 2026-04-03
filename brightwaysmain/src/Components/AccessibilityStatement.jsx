@@ -121,18 +121,7 @@ const AccessibilityStatement = () => {
         Escalation
       </h2>
       <p style={{ marginTop: "10px" }}>
-        If you are not satisfied with our response, you may raise a complaint
-        through the
-        <a
-          href="https://scores.sebi.gov.in"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="SEBI SCORES complaint portal (opens in a new tab)"
-          style={{ color: "#0052cc" }}
-        >
-          SEBI SCORES Complaint Portal (opens in new tab)
-        </a>
-        .
+       If our response hasn’t resolved your concern, you may raise through grievance
       </p>
 
       {/* FOOTER */}
