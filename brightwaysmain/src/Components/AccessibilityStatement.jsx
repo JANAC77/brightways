@@ -121,7 +121,11 @@ const AccessibilityStatement = () => {
         Escalation
       </h2>
       <p style={{ marginTop: "10px" }}>
-       If our response hasn’t resolved your concern, you may raise through grievance
+        If our response hasn’t resolved your concern, you may raise a grievance through the following channels:
+        <br />
+        <strong>SEBI SCORES:</strong> <a href="https://scores.sebi.gov.in/" style={{ color: "#0052cc" }}>https://scores.sebi.gov.in/</a>
+        <br />
+        <strong>Email Support:</strong> <a href="mailto:Support@brightwaysfinancial.com" style={{ color: "#0052cc" }}>Support@brightwaysfinancial.com</a>
       </p>
 
       {/* FOOTER */}

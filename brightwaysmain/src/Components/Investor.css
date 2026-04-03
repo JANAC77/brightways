@@ -87,10 +87,32 @@
 }
 
 /* Section */
-.ra-section h2 {
-  font-size: 18px;
-  margin-top: 20px;
+/* Research Analyst Section */
+.ra-section {
+  margin-top: 25px;
 }
+
+/* Green heading like screenshot */
+.ra-section h2 {
+  font-size: 24px;
+  color: #0a8f3c; /* green */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* RA details bold line */
+.ra-section p {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Below paragraph text */
+.ra-section + p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
 
 /* Footer */
 .footer-link {

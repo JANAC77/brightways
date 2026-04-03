@@ -150,7 +150,7 @@ export default function Investor() {
         </div>
 
         <section className="ra-section">
-          <h2>Research Analyst Details</h2>
+          <h2>Research Analyst (RA)</h2>
           <p>
             ANITHA M PROPRIETOR OF BRIGHTWAYS FINANCIAL SERVICES: INH000010566
           </p>
@@ -159,9 +159,9 @@ export default function Investor() {
           For details about Customer Support, Compliance Officer, Research Services, Risk Disclosures, Disclaimers, Refund Policies, Terms and Conditions, and Others, visit our
         </p>
         <p className="footer-link">
-          Visit:
+          website:
           <a href="https://www.brightwaysfinancial.com/" target="_blank" rel="noopener noreferrer">
-            Brightways Financial
+            https://www.brightwaysfinancial.com
           </a>
         </p>
 
