@@ -24,13 +24,13 @@ import PaymentPage from "./Components/Payment";
 import AccessibilityStatement from "./Components/AccessibilityStatement";
 
 const bannerImages = {
-   "/service": "/Image/image7.jpg",
-  "/investor": "/Image/image8.jpg",
-  "/complaint": "/Image/image9.jpg",
-  "/about": "/Image/image10.jpg",
-  "/disclosure-disclaimer": "/Image/image11.jpg",
-  "/contact": "/Image/image12.jpg",
-  "/accessibility-statement": "/Image/image13.jpg",
+   "/service": "/Image/image1.jpg",
+  "/investor": "/Image/image2.jpg",
+  "/complaint": "/Image/image3.jpg",
+  "/about": "/Image/image4.jpg",
+  "/disclosure-disclaimer": "/Image/image5.jpg",
+  "/contact": "/Image/image6.jpg",
+  "/accessibility-statement": "/Image/image7.jpg",
 };
 
 function App() {
