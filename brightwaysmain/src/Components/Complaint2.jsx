@@ -475,7 +475,7 @@ const Complaint2 = () => {
               </tr>
             </thead>
             <tbody>
-               <tr style={{ backgroundColor: '#f5f8ff' }}>
+              <tr>
                 <th scope="row" style={{
                   border: '1px solid #767676',
                   padding: '10px 12px',
