@@ -18,7 +18,7 @@ const Complaint2 = () => {
           fontWeight: '700',
           margin: '0 0 6px 0'
         }}>
-          Data for the Month Ending – February 2026
+          Data for the Month Ending – March 2026
         </h2>
 
         <div style={{ overflowX: 'auto' }}
@@ -475,7 +475,7 @@ const Complaint2 = () => {
               </tr>
             </thead>
             <tbody>
-              <tr style={{ backgroundColor: '#f5f8ff' }}>
+               <tr style={{ backgroundColor: '#f5f8ff' }}>
                 <th scope="row" style={{
                   border: '1px solid #767676',
                   padding: '10px 12px',
@@ -486,6 +486,53 @@ const Complaint2 = () => {
                   color: '#003366',
                   fontWeight: '600'
                 }}>1</th>
+                <td style={{
+                  border: '1px solid #767676',
+                  padding: '10px 12px',
+                  textAlign: 'center',
+                  fontSize: '0.9em',
+                  lineHeight: '1.4'
+                }}>March, 2026</td>
+                <td style={{
+                  border: '1px solid #767676',
+                  padding: '10px 12px',
+                  textAlign: 'center',
+                  fontSize: '0.9em',
+                  lineHeight: '1.4'
+                }}>0</td>
+                <td style={{
+                  border: '1px solid #767676',
+                  padding: '10px 12px',
+                  textAlign: 'center',
+                  fontSize: '0.9em',
+                  lineHeight: '1.4'
+                }}>0</td>
+                <td style={{
+                  border: '1px solid #767676',
+                  padding: '10px 12px',
+                  textAlign: 'center',
+                  fontSize: '0.9em',
+                  lineHeight: '1.4'
+                }}>0</td>
+                <td style={{
+                  border: '1px solid #767676',
+                  padding: '10px 12px',
+                  textAlign: 'center',
+                  fontSize: '0.9em',
+                  lineHeight: '1.4'
+                }}>0</td>
+              </tr>
+              <tr style={{ backgroundColor: '#f5f8ff' }}>
+                <th scope="row" style={{
+                  border: '1px solid #767676',
+                  padding: '10px 12px',
+                  textAlign: 'center',
+                  fontSize: '0.9em',
+                  lineHeight: '1.4',
+                  backgroundColor: '#e8eef7',
+                  color: '#003366',
+                  fontWeight: '600'
+                }}>2</th>
                 <td style={{
                   border: '1px solid #767676',
                   padding: '10px 12px',
@@ -532,7 +579,7 @@ const Complaint2 = () => {
                   backgroundColor: '#e8eef7',
                   color: '#003366',
                   fontWeight: '600'
-                }}>2</th>
+                }}>3</th>
                 <td style={{
                   border: '1px solid #767676',
                   padding: '10px 12px',
@@ -579,7 +626,7 @@ const Complaint2 = () => {
                   backgroundColor: '#e8eef7',
                   color: '#003366',
                   fontWeight: '600'
-                }}>3</th>
+                }}>4</th>
                 <td style={{
                   border: '1px solid #767676',
                   padding: '10px 12px',
@@ -626,7 +673,7 @@ const Complaint2 = () => {
                   backgroundColor: '#e8eef7',
                   color: '#003366',
                   fontWeight: '600'
-                }}>4</th>
+                }}>5</th>
                 <td style={{
                   border: '1px solid #767676',
                   padding: '10px 12px',
